@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book — Arté Tattoo &amp; Piercing Studio</title>
+<meta name="description" content="Start a tattoo booking at Arté Tattoo &amp; Piercing, Poblacion, Makati: send your idea, references, placement and size; the artist replies with a quote and a deposit link.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Hedvig+Letters+Sans&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav class="nav container" data-open="false" aria-label="Primary">
+    <a class="brand" href="index.html">Arté <mark>Tattoo</mark></a>
+    <button class="nav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="navlinks"><span></span></button>
+    <ul class="nav__links" id="navlinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="artists.html">Artists</a></li>
+      <li><a href="piercing.html">Piercing</a></li>
+      <li><a href="aftercare.html">Aftercare</a></li>
+      <li><a class="btn btn--accent" href="booking.html#book" aria-current="page">Book</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="section section--tight">
+    <div class="container">
+      <p class="eyebrow">Book</p>
+      <h1>Send your idea</h1>
+      <p class="lead measure">The more detail, the faster the quote. The artist replies with a
+        price, dates, and a deposit link that holds your slot and comes off the total. This
+        reaches the studio.</p>
+    </div>
+  </section>
+
+  <section class="section section--tight" style="padding-top:0">
+    <div class="container">
+      <div class="split split--top">
+        <form class="form card" id="book" data-contact data-web3key="REPLACE_WITH_WEB3FORMS_KEY" data-mailto="REPLACE_WITH_EMAIL">
+          <div class="field field--hp"><label>Leave this empty<input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off"></label></div>
+          <div class="grid grid--2" style="gap:1.1rem">
+            <div class="field"><label for="n">Your name</label><input id="n" name="name" required></div>
+            <div class="field"><label for="p">Mobile / Instagram handle</label><input id="p" name="contact" required></div>
+          </div>
+          <div class="grid grid--2" style="gap:1.1rem">
+            <div class="field"><label for="a">Artist</label>
+              <select id="a" name="artist"><option>No preference &mdash; match me</option><option>Mars (fine line, ornamental)</option><option>Kib (blackwork, lettering, cover-up)</option><option>Dro (traditional)</option><option>Ivy (realism, black &amp; grey)</option><option>Piercing (Nix)</option></select></div>
+            <div class="field"><label for="pl">Placement</label><input id="pl" name="placement" placeholder="e.g. inner forearm"></div>
+          </div>
+          <div class="grid grid--2" style="gap:1.1rem">
+            <div class="field"><label for="sz">Rough size</label><input id="sz" name="size" placeholder="e.g. 10cm"></div>
+            <div class="field"><label for="bd">Budget range</label><input id="bd" name="budget" placeholder="optional"></div>
+          </div>
+          <div class="field"><label for="i">The idea</label><textarea id="i" name="idea" placeholder="Describe it, and say you'll send reference images by DM or email. First tattoo? Say so."></textarea></div>
+          <label style="display:flex; gap:.6rem; align-items:flex-start; font-size:var(--step--1)"><input type="checkbox" name="age" required style="margin-top:.2rem"> I am 18 or over and will bring valid ID.</label>
+          <button class="btn btn--accent btn--lg" type="submit">Send to the studio</button>
+          <p class="form-status" role="status"></p>
+          <p style="font-family:var(--font-mono); font-size:var(--step--1); color:var(--ink-soft); margin:0">
+            Or <a href="https://www.instagram.com/artetattooph" rel="noopener">DM on Instagram</a> / call <a href="tel:+639189198611">0918 919 8611</a> with reference images.</p>
+        </form>
+
+        <div class="stack">
+          <div class="card">
+            <span class="eyebrow" style="margin-top:0">The studio</span>
+            <p>General Luna Building<br>Don Pedro Street, Barangay Poblacion, Makati</p>
+            <hr class="rule">
+            <span class="eyebrow">Hours</span>
+            <p>Sun&ndash;Wed &middot; 1pm&ndash;9pm<br>Thu&ndash;Sat &middot; 3pm&ndash;12am</p>
+            <hr class="rule">
+            <span class="eyebrow">Good to know</span>
+            <p style="font-family:var(--font-mono)">Deposit is non-refundable but comes off the total &middot; vegan ink, single-use &middot; walk-ins when a chair is free &middot; 18+ with ID</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="foot-grid">
+      <div><p class="brand" style="color:var(--brand-ink)">Arté <mark>Tattoo</mark></p><p style="opacity:.85; margin-top:1rem; max-width:34ch">Walk-in tattoo and piercing studio, Don Pedro Street, Poblacion, Makati.</p></div>
+      <div><p class="foot-h">Studio</p><p>General Luna Building<br>Don Pedro Street, Poblacion, Makati</p></div>
+      <div><p class="foot-h">Reach us</p><p><a href="tel:+639189198611">0918 919 8611</a><br><a href="https://www.instagram.com/artetattooph" rel="noopener">@artetattooph</a></p></div>
+    </div>
+    <div class="demo-flag">Design proposal prepared by GCCofCI Digital &mdash; not the official website of Arté Tattoo &amp; Piercing Studio. The form needs a free Web3Forms key (2 minutes) before it delivers to an inbox; until then it opens the visitor's email app.</div>
+    <div class="foot-note"><span>&copy; <span data-year>2026</span> Arté Tattoo &amp; Piercing Studio. Concept site.</span><span>Built by GCCofCI Digital</span></div>
+  </div>
+</footer>
+
+<a class="chat-fab" href="https://www.instagram.com/artetattooph" rel="noopener" aria-label="Message us on Instagram">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.3 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.3 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.3-2.2-.4a3.5 3.5 0 0 1-1.4-.9 3.5 3.5 0 0 1-.9-1.4c-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.3-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2z"/></svg>
+  Message us
+</a>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

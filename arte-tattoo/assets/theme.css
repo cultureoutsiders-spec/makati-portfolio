@@ -1,0 +1,92 @@
+/* =============================================================
+   Arté Tattoo & Piercing Studio — theme.css
+   Direction: "the wall of work." A busy walk-in tattoo + piercing
+   studio in Poblacion. The signature is a wall of work cards
+   (artist, a style tag, a healed piece), used on the homepage and
+   the artists page, plus a deposit-and-book flow. Gallery
+   near-white, vegan-ink black, a warm red. Wide art-gallery
+   display, a plain body.
+   ============================================================= */
+:root{
+  --paper:      #f2f1ee;
+  --paper-2:    #e7e5df;
+  --ink:        #151513;
+  --ink-soft:   #55534d;
+  --line:       #d3d0c7;
+  --accent:     #d13a2c;   /* warm red */
+  --accent-ink: #ffffff;
+  --brand:      #141312;
+  --brand-ink:  #efeee8;
+
+  --font-display: "Syne", "Arial", system-ui, sans-serif;
+  --font-body:    "Hedvig Letters Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "Space Mono", ui-monospace, "Consolas", monospace;
+
+  --radius: 2px;
+  --container: 1120px;
+}
+
+body{ background:var(--paper); color:var(--ink); }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; letter-spacing:-.02em; line-height:1; }
+h1{ font-weight:800; }
+.lead{ color:var(--ink-soft); }
+a{ color:var(--accent); }
+.eyebrow{ color:var(--accent); font-family:var(--font-mono); letter-spacing:.16em; text-transform:uppercase; }
+.eyebrow::before{ background:currentColor; }
+.section--brand{ background:var(--brand); color:var(--brand-ink); }
+.section--brand .lead{ color:#cfccc4; opacity:1; }
+.section--brand .eyebrow{ color:#e77163; }
+.section--paper2{ background:var(--paper-2); }
+.rule{ border-color:var(--line); }
+
+.brand{ font-family:var(--font-display); font-weight:800; letter-spacing:-.02em; color:var(--ink); }
+.brand mark{ background:var(--accent); color:#fff; }
+.nav__links a{ letter-spacing:.03em; text-transform:uppercase; font-size:var(--step--1); }
+.nav__links a[aria-current="page"]::after{ background:var(--accent); }
+.btn{ border-radius:var(--radius); font-family:var(--font-display); font-weight:700; letter-spacing:.02em; text-transform:uppercase; font-size:var(--step-0); }
+.btn--accent{ --_bg:var(--accent); --_fg:#fff; }
+.nav__links a.btn{ color:var(--_fg); }
+.section--brand .btn--ghost{ --_fg:var(--brand-ink); }
+.card{ background:#fbfaf6; border-color:var(--line); border-radius:var(--radius); }
+.chat-fab{ background:var(--accent); color:#fff; }
+.site-footer{ background:var(--brand); }
+.review{ border-left-color:var(--accent); }
+.review p{ font-family:var(--font-body); font-style:italic; }
+.stars{ color:var(--accent); }
+.stat__num{ font-family:var(--font-display); color:var(--accent); }
+.pill{ border-color:var(--line); font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.06em; font-size:var(--step--2); }
+.table td.price{ color:var(--accent); font-family:var(--font-mono); }
+.field input,.field select,.field textarea{ background:#fbfaf6; border-radius:var(--radius); }
+
+/* =============================================================
+   The wall of work — signature
+   ============================================================= */
+.wall{ column-count:3; column-gap:1rem; }
+@media (max-width:820px){ .wall{ column-count:2; } }
+@media (max-width:520px){ .wall{ column-count:1; } }
+.work{ break-inside:avoid; margin-bottom:1rem; border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fbfaf6; }
+.work .media{ display:block; }
+.work__body{ padding:.7rem .9rem .9rem; display:flex; justify-content:space-between; align-items:baseline; gap:.6rem; }
+.work__artist{ font-family:var(--font-display); font-weight:700; font-size:var(--step-0); text-transform:uppercase; letter-spacing:-.01em; }
+.work__tag{ font-family:var(--font-mono); font-size:var(--step--2); text-transform:uppercase; letter-spacing:.08em; color:var(--accent); border:1px solid var(--accent); border-radius:999px; padding:.1em .6em; white-space:nowrap; }
+
+/* artist roster */
+.artist{ border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fbfaf6; }
+.artist .media{ aspect-ratio:1/1; }
+.artist__body{ padding:1rem 1.1rem 1.2rem; }
+.artist__body h3{ font-size:var(--step-1); text-transform:uppercase; }
+.artist__body .styles{ font-family:var(--font-mono); font-size:var(--step--1); letter-spacing:.06em; text-transform:uppercase; color:var(--ink-soft); margin-top:.3rem; }
+
+/* step flow */
+.flow{ counter-reset:f; list-style:none; margin:0; padding:0; display:grid; gap:1rem; }
+.flow li{ counter-increment:f; display:grid; grid-template-columns:2.4rem 1fr; gap:1rem; align-items:start; }
+.flow li::before{ content:counter(f,decimal-leading-zero); font-family:var(--font-mono); font-weight:700; color:var(--accent); font-size:var(--step-1); }
+
+/* price rows */
+.prow{ display:grid; grid-template-columns:1fr auto; gap:.15rem 1rem; align-items:baseline; padding:.8rem 0; border-bottom:1px solid var(--line); }
+.prow:last-child{ border-bottom:0; }
+.prow .n{ font-family:var(--font-display); font-weight:700; text-transform:uppercase; font-size:var(--step-0); }
+.prow .p{ font-family:var(--font-mono); color:var(--accent); white-space:nowrap; }
+.prow .d{ grid-column:1/-1; font-size:var(--step--1); color:var(--ink-soft); }
+
+@media (prefers-reduced-motion: reduce){ .btn:hover{ transform:none; } }

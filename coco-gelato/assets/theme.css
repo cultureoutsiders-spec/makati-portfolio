@@ -1,0 +1,95 @@
+/* =============================================================
+   Coco Gelato PH — theme.css
+   Direction: "the flavour board." Artisan gelato by a
+   Japan-trained, Italian-method chef, a small counter outside
+   Minnano Supermarket in Legazpi Village. The signature is the
+   scooping-today board: a row per flavour with a colour dot,
+   an allergen tag, and a sold-out state. Warm cream, a
+   raspberry pink, a pistachio teal, soft dark cocoa. A rounded
+   display face, a plain body, mono for the allergen key.
+   ============================================================= */
+:root{
+  --paper:      #fff8f0;
+  --paper-2:    #ffecd6;
+  --ink:        #38302a;
+  --ink-soft:   #6f6157;
+  --line:       #ecd8c2;
+  --accent:     #e5476b;   /* raspberry */
+  --accent-ink: #ffffff;
+  --pist:       #2f7d72;   /* pistachio teal, second colour */
+  --brand:      #33241d;
+  --brand-ink:  #ffe9d5;
+
+  --font-display: "Baloo 2", "Trebuchet MS", system-ui, sans-serif;
+  --font-body:    "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "DM Mono", ui-monospace, "Consolas", monospace;
+
+  --radius: 14px;
+  --container: 1060px;
+}
+
+body{ background:var(--paper); color:var(--ink); }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; letter-spacing:0; line-height:1.08; }
+.lead{ color:var(--ink-soft); }
+a{ color:var(--accent); }
+.eyebrow{ color:var(--pist); font-family:var(--font-mono); letter-spacing:.14em; }
+.eyebrow::before{ background:currentColor; }
+.section--brand{ background:var(--brand); color:var(--brand-ink); }
+.section--brand .lead{ color:#e8d3c2; opacity:1; }
+.section--brand .eyebrow{ color:#7ec7bb; }
+.section--paper2{ background:var(--paper-2); }
+.rule{ border-color:var(--line); }
+
+.brand{ font-family:var(--font-display); font-weight:800; color:var(--ink); letter-spacing:.01em; }
+.brand mark{ background:var(--accent); color:#fff; border-radius:6px; padding:0 .18em; }
+.nav__links a{ letter-spacing:.01em; font-weight:500; }
+.nav__links a[aria-current="page"]::after{ background:var(--accent); }
+.btn{ border-radius:999px; font-family:var(--font-display); font-weight:700; letter-spacing:.01em; }
+.btn--accent{ --_bg:var(--accent); --_fg:#fff; }
+.nav__links a.btn{ color:var(--_fg); }
+.section--brand .btn--ghost{ --_fg:var(--brand-ink); }
+.card{ background:#fffdf8; border-color:var(--line); border-radius:var(--radius); }
+.chat-fab{ background:var(--accent); color:#fff; }
+.site-footer{ background:var(--brand); }
+.review{ border-left-color:var(--accent); }
+.review p{ font-family:var(--font-display); font-weight:600; }
+.stars{ color:var(--accent); }
+.stat__num{ font-family:var(--font-display); color:var(--accent); }
+.pill{ border-color:var(--line); font-family:var(--font-mono); border-radius:999px; }
+.table td.price{ color:var(--accent); font-family:var(--font-mono); }
+.field input,.field select,.field textarea{ background:#fffdf8; border-radius:10px; }
+
+/* =============================================================
+   The scooping-today board — signature
+   ============================================================= */
+.board{
+  background:#fffdf8;
+  border:2px solid var(--ink);
+  border-radius:var(--radius);
+  padding:clamp(1.1rem, 0.9rem + 1.4vw, 1.9rem);
+  box-shadow:0 18px 44px rgba(90,60,40,.14);
+}
+.board__head{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; border-bottom:2px dashed var(--line); padding-bottom:.7rem; margin-bottom:.4rem; }
+.board__head h3{ font-size:var(--step-1); }
+.board__date{ font-family:var(--font-mono); font-size:var(--step--1); color:var(--pist); }
+.scoop{ display:grid; grid-template-columns:auto 1fr auto; gap:.2rem .9rem; align-items:center; padding:.62rem 0; border-bottom:1px solid var(--line); }
+.scoop:last-child{ border-bottom:0; }
+.scoop__dot{ width:1.15rem; height:1.15rem; border-radius:50%; border:2px solid rgba(0,0,0,.12); }
+.scoop__name{ font-family:var(--font-display); font-weight:600; font-size:var(--step-0); }
+.scoop__tag{ font-family:var(--font-mono); font-size:var(--step--2); color:var(--ink-soft); letter-spacing:.06em; text-transform:uppercase; }
+.scoop--out .scoop__name{ color:var(--ink-soft); text-decoration:line-through; }
+.scoop--out .scoop__tag{ color:var(--accent); }
+.scoop__note{ grid-column:2/-1; font-size:var(--step--1); color:var(--ink-soft); }
+
+/* allergen key */
+.akey{ display:flex; flex-wrap:wrap; gap:.5rem .9rem; margin-top:1rem; padding-top:.9rem; border-top:1px solid var(--line); font-family:var(--font-mono); font-size:var(--step--2); color:var(--ink-soft); letter-spacing:.04em; }
+.akey b{ color:var(--ink); }
+
+/* size cards */
+.sizes{ display:grid; grid-template-columns:repeat(auto-fit,minmax(160px,1fr)); gap:1rem; }
+.size{ background:#fffdf8; border:2px solid var(--line); border-radius:var(--radius); padding:1.1rem; text-align:center; }
+.size h3{ font-size:var(--step-1); }
+.size .amt{ font-family:var(--font-mono); color:var(--accent); font-size:var(--step-1); display:block; margin:.3rem 0; }
+.size p{ font-size:var(--step--1); color:var(--ink-soft); margin:0; }
+
+@media (prefers-reduced-motion: reduce){ .btn:hover{ transform:none; } }

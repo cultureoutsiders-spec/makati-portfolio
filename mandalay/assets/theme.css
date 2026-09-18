@@ -1,0 +1,108 @@
+/* =============================================================
+   Mandalay Whisky & Cigars — theme.css
+   Direction: "the humidor list." A bourbon and whisky cigar
+   bar hidden behind The Belle & Dragon in Legazpi Village.
+   Dark by intent, not by fashion: a warm brown-black room, low
+   brass light, an oxblood second colour. A high-contrast serif
+   display, a quiet sans body, mono for the gauge and price
+   columns of the lists.
+   ============================================================= */
+:root{
+  --paper:      #17130f;   /* room */
+  --paper-2:    #1f1a14;
+  --ink:        #ece2d4;   /* warm off-white text */
+  --ink-soft:   #b0a08a;
+  --line:       #3a2f24;
+  --accent:     #c8912f;   /* brass */
+  --accent-ink: #17130f;
+  --oxblood:    #7c2b2b;
+  --brand:      #0f0c09;
+  --brand-ink:  #e7dccb;
+
+  --font-display: "Prata", Georgia, "Times New Roman", serif;
+  --font-body:    "Jost", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    "Space Mono", ui-monospace, "Consolas", monospace;
+
+  --radius: 2px;
+  --container: 1000px;
+}
+
+body{ background:var(--paper); color:var(--ink); }
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:400; letter-spacing:.01em; line-height:1.15; color:var(--ink); }
+.lead{ color:var(--ink-soft); }
+a{ color:var(--accent); }
+.section{ border-color:var(--line); }
+.section--tight{ border-color:var(--line); }
+.eyebrow{ color:var(--accent); font-family:var(--font-mono); letter-spacing:.24em; }
+.eyebrow::before{ background:currentColor; }
+.section--brand{ background:var(--brand); color:var(--brand-ink); }
+.section--brand .lead{ color:#c9bca8; opacity:1; }
+.section--brand .eyebrow{ color:var(--accent); }
+.section--paper2{ background:var(--paper-2); }
+.rule{ border-color:var(--line); }
+.measure{ color:var(--ink-soft); }
+
+.brand{ font-family:var(--font-display); font-weight:400; color:var(--ink); letter-spacing:.06em; text-transform:uppercase; font-size:var(--step-0); }
+.nav{ border-bottom:1px solid var(--line); }
+.site-header{ background:rgba(15,12,9,.9); }
+.nav__links a{ letter-spacing:.12em; text-transform:uppercase; font-size:var(--step--1); color:var(--ink); }
+.nav__links a[aria-current="page"]::after{ background:var(--accent); }
+.nav__links a:hover{ color:var(--accent); }
+.btn{ border-radius:var(--radius); font-family:var(--font-mono); font-weight:700; letter-spacing:.1em; text-transform:uppercase; font-size:var(--step--1); }
+.btn--accent{ --_bg:var(--accent); --_fg:#17130f; }
+.nav__links a.btn{ color:var(--_fg); }
+.btn--ghost{ --_fg:var(--ink); border-color:var(--line); }
+.section--brand .btn--ghost{ --_fg:var(--brand-ink); }
+.card{ background:var(--paper-2); border-color:var(--line); border-radius:var(--radius); color:var(--ink); }
+.card h3{ color:var(--ink); }
+.chat-fab{ background:var(--accent); color:#17130f; }
+.site-footer{ background:var(--brand); color:var(--brand-ink); }
+.site-footer a{ color:var(--accent); }
+.foot-h{ color:var(--ink); }
+.review{ border-left-color:var(--oxblood); }
+.review p{ font-family:var(--font-display); font-size:var(--step-1); }
+.stars{ color:var(--accent); }
+.stat__num{ font-family:var(--font-display); color:var(--accent); }
+.pill{ border-color:var(--line); font-family:var(--font-mono); color:var(--ink-soft); }
+.field label{ color:var(--ink); }
+.field input,.field select,.field textarea{ background:var(--paper-2); border-color:var(--line); color:var(--ink); border-radius:var(--radius); }
+.field input::placeholder,.field textarea::placeholder{ color:#7c6f5d; }
+.form-status{ color:var(--ink-soft); }
+
+/* =============================================================
+   The humidor list — signature
+   ============================================================= */
+.list{
+  border:1px solid var(--line);
+  border-top:2px solid var(--accent);
+  background:var(--paper-2);
+  padding:clamp(1.1rem, 0.9rem + 1.4vw, 2rem);
+}
+.list__head{ display:flex; align-items:baseline; justify-content:space-between; gap:1rem; border-bottom:1px solid var(--line); padding-bottom:.7rem; margin-bottom:.3rem; }
+.list__head h3{ font-size:var(--step-1); }
+.list__head span{ font-family:var(--font-mono); font-size:var(--step--2); letter-spacing:.14em; text-transform:uppercase; color:var(--ink-soft); }
+.hrow{ display:grid; grid-template-columns:1fr auto auto; gap:.15rem 1.4rem; align-items:baseline; padding:.7rem 0; border-bottom:1px solid var(--line); }
+.hrow:last-child{ border-bottom:0; }
+.hrow .n{ font-family:var(--font-display); font-size:var(--step-0); }
+.hrow .o{ font-size:var(--step--1); color:var(--ink-soft); }
+.hrow .g{ font-family:var(--font-mono); font-size:var(--step--1); color:var(--ink-soft); white-space:nowrap; }
+.hrow .p{ font-family:var(--font-mono); font-size:var(--step--1); color:var(--accent); white-space:nowrap; }
+.hrow .o,.hrow .n{ grid-column:1; }
+.hrow .n{ grid-row:1; }
+.hrow .o{ grid-row:2; }
+.hrow .g{ grid-column:2; grid-row:1 / span 2; align-self:center; }
+.hrow .p{ grid-column:3; grid-row:1 / span 2; align-self:center; }
+@media (max-width:560px){
+  .hrow{ grid-template-columns:1fr auto; }
+  .hrow .g{ grid-column:1; grid-row:3; }
+  .hrow .p{ grid-column:2; grid-row:1 / span 3; }
+}
+
+/* house rules */
+.rules{ list-style:none; margin:0; padding:0; display:grid; gap:1px; background:var(--line); border:1px solid var(--line); }
+.rules li{ background:var(--paper); padding:1.1rem 1.2rem; display:grid; grid-template-columns:2.4rem 1fr; gap:1rem; }
+.rules .rn{ font-family:var(--font-mono); color:var(--accent); }
+.rules h3{ font-size:var(--step-0); margin:0 0 .2rem; }
+.rules p{ margin:0; color:var(--ink-soft); font-size:var(--step--1); }
+
+@media (prefers-reduced-motion: reduce){ .btn:hover{ transform:none; } }
