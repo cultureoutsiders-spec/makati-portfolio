@@ -252,7 +252,9 @@ a{ color:var(--accent-deep); }
 .unit__cta a{ font-family:var(--font-mono); font-weight:600; font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; }
 .unit[hidden]{ display:none; }
 .unit,.card,.door,.icard,.tower__panel{ color:var(--ink); }
-.section--brand .unit a,.section--brand .card a{ color:var(--accent-deep); }
+.section--brand .unit a{ color:var(--accent-deep); }
+.section--brand .card{ color:var(--brand-ink); }
+.section--brand .card p{ color:var(--brand-ink); opacity:.82; }
 
 .filterbar{ display:grid; gap:1rem; margin-bottom:var(--space-lg); }
 .filterbar__row{ display:flex; flex-wrap:wrap; align-items:center; gap:.5rem .6rem; }
