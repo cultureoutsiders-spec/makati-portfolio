@@ -429,3 +429,15 @@ html:not(.js) .zone{ padding-bottom:var(--space-md); margin-bottom:var(--space-m
 
 /* ---- Focus on dark ---- */
 .section--brand :focus-visible,.hero :focus-visible,.site-header :focus-visible,.directory :focus-visible{ outline-color:var(--brass-light); }
+
+/* ---- Consent checkbox + privacy notice ---- */
+.consent{ display:flex; gap:.7rem; align-items:flex-start; font-size:.9rem; line-height:1.5; color:var(--ink-soft); }
+.consent input{ width:1.15rem; height:1.15rem; margin-top:.2rem; flex:none; accent-color:var(--accent); }
+.consent a{ color:var(--accent-deep); }
+.notice-banner{ border:1px solid var(--accent); background:#fbf3df; padding:1rem 1.2rem; margin-bottom:var(--space-lg); font-size:.94rem; }
+.prose h2{ font-size:var(--step-2); margin:2.2rem 0 .7rem; }
+.prose h2:first-child{ margin-top:0; }
+.prose ul{ padding-left:1.2rem; margin:0 0 1em; }
+.prose li{ margin-bottom:.4rem; color:var(--ink-soft); }
+.prose p{ color:var(--ink-soft); }
+.foot-note a{ text-decoration:underline; }
